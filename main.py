@@ -72,7 +72,7 @@ class MovieRecommender:
         
         self.root.configure(bg=self.colors['primary'])
         
-        # مرکز کردن پنجره
+        
         self.center_window()
         
         # متغیرهای وضعیت
@@ -191,7 +191,7 @@ class MovieRecommender:
         # پنل سمت راست
         self.create_right_panel(main_frame)
         
-        # نوار وضعیت
+        # نوار اتفاقات
         self.create_status_bar()
     
     def create_header(self):
@@ -218,11 +218,11 @@ class MovieRecommender:
         ).pack()
     
     def create_left_panel(self, parent):
-        """ایجاد پنل فیلترها"""
+        """ساخت پنل فیلترها"""
         panel = tk.Frame(parent, bg=self.colors['secondary'], width=320)
         panel.pack(side='left', fill='y', padx=(0, 15))
         
-        # عنوان پنل
+        # نام پنل
         tk.Label(
             panel,
             text="⚙️ فیلترهای پیشرفته",
@@ -348,7 +348,7 @@ class MovieRecommender:
         self.apply_filters()
     
     def deselect_all_genres(self):
-        """عدم انتخاب همه ژانرها"""
+        """انتخاب نکردن همه ژانرها"""
         for genre in self.genres:
             self.genre_states[genre] = False
             btn = self.genre_buttons[genre]
@@ -401,7 +401,7 @@ class MovieRecommender:
         ToolTip(self.year_slider, "انتخاب حداقل سال تولید فیلم")
     
     def create_rating_section(self, panel):
-        """ایجاد بخش فیلتر امتیاز"""
+        """ساخت بخش فیلتر امتیاز"""
         rating_frame = tk.LabelFrame(
             panel,
             text="⭐ حداقل امتیاز",
@@ -540,7 +540,7 @@ class MovieRecommender:
         self.results_canvas.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
         
-        # اسکرول با ماوس
+        # اسکرول با موس
         self.results_canvas.bind_all("<MouseWheel>", self._on_mousewheel)
     
     def create_status_bar(self):
@@ -712,7 +712,7 @@ class MovieRecommender:
             bg=card_color
         ).pack(side='left', padx=(15, 0))
         
-        # دکمه‌های کناری
+        # دکمه‌های اطراف
         buttons_frame = tk.Frame(card, bg=card_color)
         buttons_frame.pack(side='right', padx=10)
         
@@ -732,7 +732,7 @@ class MovieRecommender:
         info_btn.pack(pady=3)
         ToolTip(info_btn, "مشاهده جزئیات کامل این فیلم")
         
-        # دکمه ذخیره
+        # دکمه سیو
         save_btn = tk.Button(
             buttons_frame,
             text="➕ ذخیره",
@@ -1128,4 +1128,5 @@ def main():
     root.mainloop()
 
 if __name__ == "__main__":
+
     main()
