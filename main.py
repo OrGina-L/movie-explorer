@@ -575,7 +575,7 @@ class MovieRecommender:
         self.update_time()
     
     def _on_mousewheel(self, event):
-        """کنترل اسکرول با ماوس"""
+        """کنترل اسکرول با موس"""
         self.results_canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
     
     def update_time(self):
@@ -1064,8 +1064,8 @@ class MovieRecommender:
         • تعداد فیلم‌های منتخب شما: {len(self.watchlist)}
         • تعداد ژانرهای انتخاب شده: {sum(1 for state in self.genre_states.values() if state)}
         
-        🎬 سینماسنجن    
-        ن توسعه‌دهنده:ئ [محمد جواد منصوری]
+        🎬 سینماسنج 
+         توسعه‌دهنده: [محمد جواد منصوری]
         """
         
         messagebox.showinfo("📊 آمار و اطلاعات", stats_text)
@@ -1130,3 +1130,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
